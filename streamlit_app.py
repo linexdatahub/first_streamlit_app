@@ -40,3 +40,5 @@ my_cur.execute("select * from fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.text("The fruit load list contains:")
 streamlit.text(my_data_rows)
+
+add_my_fruit = streamlit.multiselect("What fruit would you like to add?", list(my_fruit_list.index))
