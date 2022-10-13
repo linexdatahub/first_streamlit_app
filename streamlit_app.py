@@ -43,6 +43,7 @@ try:
 except URLError as e:
     streamlit.error()
 
+streamlit.text("The fruit load list contains:")
 def get_fruit_load_list():
         with my_cnx.cursor() as my_cur:
              my_cur.execute("use warehouse compute_wh")
@@ -55,10 +56,10 @@ if streamlit.button('Get Fruit Load List'):
         streamlit.datafram(my_data_rows)
 
 
-streamlit.text("The fruit load list contains:")
-streamlit.text(my_data_rows)
-
 streamlit.stop()
+
+
+streamlit.text(my_data_rows)
 
 add_my_fruit = streamlit.text_input("What fruit would you like to add?", list(my_fruit_list.index))
 streamlit.write ('Thanks for adding ' , add_my_fruit)
